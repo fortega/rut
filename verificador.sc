@@ -6,14 +6,10 @@ def verificador(rut: String) = {
         } else acc
     }
     
-    def charToInt(a: Char) = a.toString.toInt
-    
-    11- rut.
-        map(charToInt).
+    11 - rut.
+        map(_.toString.toInt).
         zip(testSeq(rut.length)).
         map{case (a,b) => a*b}.
         reduce(_+_) % 11
 }
-
-val rut = "1"
-println(verificador(rut))
+println(verificador("1")) // 9
